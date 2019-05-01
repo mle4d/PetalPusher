@@ -5,13 +5,13 @@ formData.set('dpu', 'delivery');
 formData.set('time', expected.time);
 formData.set('address', expected.address);
 formData.set('flowers', expected.flowers);
-// formData.append('flowers', expected.flowers);
+formData.append('flowers', expected.flowers);
 formData.set('budget', expected.budget);
 formData.set('color', expected.color);
 
 const name = formData.get('name');
     const phone = formData.get('phone');
-    const dpu = formData.get('dpu') === 'delivery';
+    const dpu = formData.get('dpu');
     const time = formData.get('time');
     const address = formData.get('address');
     const flowers = formData.get('flowers');
