@@ -1,11 +1,13 @@
-/* eslint-disable */
+import getApplication from './get-application.js';
 
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(``);
-global.window = window;
-global.document = window.document;
-global.FormData = window.FormData;
+const form = document.getElementById('order-form');
 
-require = require('esm')(module);
-module.exports = require('./tests.js');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    
+    const applicant = getApplication(formData);
+    
+    console.log(applicant);
+});
