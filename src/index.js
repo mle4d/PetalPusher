@@ -1,3 +1,5 @@
+import getApplication from '.getApplication.js';
+import customerApi from './customer-api.js';
 /* eslint-disable */
 
 // include jsdom for DOM use in tests on travis
@@ -13,9 +15,6 @@ global.localStorage = window.localStorage;
 
 require = require('esm')(module);
 module.exports = require('./tests.js');
-
-import getApplication from './get-application.js';
-
 const form = document.getElementById('order-form');
 
 form.addEventListener('submit', (event) => {
