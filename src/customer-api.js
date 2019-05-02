@@ -1,7 +1,7 @@
 const customerApi = {
     save: function(customer) {
         const json = JSON.stringify(customer);
-        localStorage.SetItem('customer', json);
+        localStorage.setItem('customer', json);
     },
     get: function() {
         const json = localStorage.getItem('customer');

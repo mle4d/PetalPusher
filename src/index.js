@@ -17,6 +17,15 @@ require = require('esm')(module);
 module.exports = require('./tests.js');
 const form = document.getElementById('order-form');
 
+const delivery = document.getElementById('dpu');
+const pickup = document.getElementById('pick-up');
+const dpu = document.getElementById('dpu');
+
+yes.addEventListener('change', function() {
+    dpu.disabled = !delivery.checked;
+    dpu.required = delivery.checked;
+});
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -24,5 +33,5 @@ form.addEventListener('submit', (event) => {
     
     const applicant = getApplication(formData);
     
-    console.log(applicant);
+    customerApi.save(customer);
 });

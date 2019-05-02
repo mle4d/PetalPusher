@@ -5,7 +5,7 @@ QUnit.module('customer api');
 const customerApi = {
     save: function(customer) {
         const json = JSON.stringify(customer);
-        localStorage.SetItem('applicant', json);
+        localStorage.setItem('applicant', json);
     },
     get: function() {
         const json = localStorage.getItem('applicant');
