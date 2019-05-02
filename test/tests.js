@@ -1,4 +1,4 @@
-import '../tests/make-customer,test.js';
+import '../tests/make-customer.test.js';
 import './customer-api.test';
 //const test = QUnit.test;
 
