@@ -1,4 +1,4 @@
-import getApplication from '.getApplication.js';
+import getApplication from './get-application.js';
 import customerApi from './customer-api.js';
 /* eslint-disable */
 

@@ -18,7 +18,7 @@ test('makes object literal from form data', (assert)=> {
     const formData = new FormData ();
     formData.set('name', expected.name);
     formData.set('phone', expected.phone);
-    formData.set('dpu', 'delivery');
+    formData.set('dpu', expected.dpu);
     formData.set('time', expected.time);
     formData.set('address', expected.address);
     formData.set('flowers', expected.flowers[0]);

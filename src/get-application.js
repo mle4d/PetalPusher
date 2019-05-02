@@ -17,11 +17,7 @@ function getApplication(formData) {
         flowers: flowers,
         budget: budget,
         color: color,
-
-
     };
     return applicant;
 }
-
-
 export default getApplication;
