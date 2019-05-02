@@ -2,7 +2,7 @@ import customerApi from '../src/customer-api.js';
 const test = QUnit.test;
 
 QUnit.module('customer api');
-const customerApi = {
+const orderApi = {
     save: function(customer) {
         const json = JSON.stringify(customer);
         localStorage.setItem('applicant', json);
@@ -16,9 +16,9 @@ const customerApi = {
 
 test('round-trip customer', (assert) => {
    //remember you changed applicant to customer//
-    const customer = {name: 'tester'};
+    const customer = { name: 'tester' };
 
-    customerApi.save(customer);
+    orderApi.save(customer);
     const result = customerApi.get();
 
     assert.deepEqual(result, customer);
