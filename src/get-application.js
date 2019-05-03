@@ -8,7 +8,7 @@ function getApplication(formData) {
     const budget = formData.get('budget');
     const color = formData.get('color');
 
-    const applicant = {
+    const customer = {
         name: name,
         phone: phone,
         dpu: dpu,
@@ -18,6 +18,6 @@ function getApplication(formData) {
         budget: budget,
         color: color,
     };
-    return applicant;
+    return customer;
 }
 export default getApplication;

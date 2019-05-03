@@ -17,21 +17,12 @@ import customerApi from './customer-api.js';
 // module.exports = require('./tests.js');
 const form = document.getElementById('order-form');
 
-const delivery = document.getElementById('dpu');
-const pickUp = document.getElementById('pick-up');
-const dpu = document.getElementById('dpu');
-
-yes.addEventListener('change', function () {
-    dpu.disabled = !delivery.checked;
-    dpu.required = delivery.checked;
-});
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
 
-    const applicant = getApplication(formData);
+    const customer = getApplication(formData);
 
     customerApi.save(customer);
 

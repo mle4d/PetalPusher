@@ -3,8 +3,9 @@ import customerApi from './customer-api.js';
 const tbody = document.getElementById('orders');
 
 const customers = customerApi.getAll();
+console.log(customers);
 for(let i = 0; i < customers.length; i++) {
-    const customer = customer [i];
+    const customer = customers[i];
 
     const tr = document.createElement('tr');
 
@@ -12,7 +13,7 @@ for(let i = 0; i < customers.length; i++) {
     const link = document.createElement('a');
     const searchParams = new URLSearchParams();
 
-    searchParams.set('name, customer.name');
+    searchParams.set('name', customer.name);
     link.href = 'customer.html?' + searchParams.toString();
 
     link.textContent = customer.name;
@@ -21,12 +22,10 @@ for(let i = 0; i < customers.length; i++) {
 
     const phoneCell = document.createElement('td');
     phoneCell.textContent = customer.phone;
-    phoneCell.appendChild(link);
     tr.appendChild(phoneCell);
 
     const timeCell = document.createElement('td');
     timeCell.textContent = customer.time;
-    timeCell.appendChild(link);
     tr.appendChild(timeCell);
 
     tbody.appendChild(tr);

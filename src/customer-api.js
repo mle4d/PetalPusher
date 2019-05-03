@@ -4,11 +4,18 @@ const customerApi = {
         const customers = customerApi.getAll();
         customers.push(customer);
         const json = JSON.stringify(customers);
-        customerApi.storage.setItem('customers, json');
+        customerApi.storage.setItem('customers', json);
     },
-    get(){
+    get(name){
         const customers = customerApi.getAll();
-        return customers[0];
+
+        for(let i = 0; i < customers.length; i++) {
+            const customer = customers[i];
+            if(customer.name === name) {
+                return customer;
+            }
+        }
+
     },
     getAll() {
         const json = customerApi.storage.getItem('customers');
