@@ -9,11 +9,14 @@ const flowers = document.getElementsById('flowers');
 const budget = document.getElementsById('budget');
 const color = document.getElementsById('color');
 
-const customer = customerApi.get();
+const searchParams = new URLSearchParams(window.location.search);
+const id = searchParams.get('name');
 
-if(!customer) {
-    window.location = './';
-}
+const customer = customerApi.get(id);
+
+//if(!customer) {
+//     window.location = './';
+// }
 
 name.textContent = customer.name;
 phone.textContent = customer.phone;
