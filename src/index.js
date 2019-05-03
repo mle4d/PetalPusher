@@ -21,7 +21,7 @@ const delivery = document.getElementById('dpu');
 const pickup = document.getElementById('pick-up');
 const dpu = document.getElementById('dpu');
 
-yes.addEventListener('change', function() {
+yes.addEventListener('change', function () {
     dpu.disabled = !delivery.checked;
     dpu.required = delivery.checked;
 });
@@ -30,8 +30,8 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
-    
+
     const applicant = getApplication(formData);
-    
+
     customerApi.save(customer);
 });

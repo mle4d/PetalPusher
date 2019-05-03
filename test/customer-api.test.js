@@ -5,7 +5,7 @@ QUnit.module('customer api');
 
 customerApi.storage = sessionStorage;
 const testStorage = sessionStorage;
-//const orderApi = {   
+//const orderApi = {
     //  save: function(customer) {
    //const json = JSON.stringify(customer);
   //localStorage.setItem('applicant', json);
@@ -33,15 +33,15 @@ test('no applicants in local storage returns empty array', assert => {
     const expected = [];
 
     const customers = customerApi.getAll();
-     
+
     assert.deepEqual(customers, expected);
 });
 
 test('two saves return array with two items', (assert => {
     testStorage.removeItem('customers');
 
-    const customer1 = { name: 'tester '};
-    const customer2 = { name: 'tester2'};
+    const customer1 = { name: 'tester ' };
+    const customer2 = { name: 'tester2' };
     const expected = [customer1, customer2];
 
     customerApi.save(customer1);
@@ -50,4 +50,4 @@ test('two saves return array with two items', (assert => {
     const customers = customerApi.getAll();
 
     assert.deepEqual(customers, expected);
-}); 
+}));
