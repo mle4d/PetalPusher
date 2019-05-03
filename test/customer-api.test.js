@@ -18,18 +18,16 @@ const testStorage = sessionStorage;
 //};
 
 test('round-trip customer', (assert) => {
-    testStorage.removeItem('applicants');
-   //remember you changed applicant to customer//
+    testStorage.removeItem('customers');
     const customer = { name: 'tester' };
-    console.log(customer, 'customer');
     customerApi.save(customer);
     const result = customerApi.get();
 
     assert.deepEqual(result, customer);
 });
 
-test('no applicants in local storage returns empty array', assert => {
-    testStorage.removeItem('applicants');
+test('no customerss in local storage returns empty array', assert => {
+    testStorage.removeItem('customers');
     const expected = [];
 
     const customers = customerApi.getAll();
