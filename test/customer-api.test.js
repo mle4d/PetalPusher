@@ -21,7 +21,7 @@ test('round-trip customer', (assert) => {
     testStorage.removeItem('customers');
     const customer = { name: 'tester' };
     customerApi.save(customer);
-    const result = customerApi.get();
+    const result = customerApi.get(customer.name);
 
     assert.deepEqual(result, customer);
 });
