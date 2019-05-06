@@ -1,3 +1,14 @@
+header{
+    background: lightpink url(https://webstockreview.net/images/floral-clipart-pastel-19.png)  no-repeat;
+    height: 300px;
+    width: 1000px;
+}
+h1{
+    font-size: 100px;
+    text-align: center;
+    color: white ;
+}
+    
 input {
     display: block;
     font-size: 12px;
@@ -6,4 +17,9 @@ input {
     display: inline;
 
 }
-
+fieldset{
+    width: 975px;
+    background: lightpink;
+    color: rgb(13, 88, 59);
+    font-size: 20px;
+}
