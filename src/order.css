@@ -1,13 +1,14 @@
 header{
-    background: lightpink url(https://image.shutterstock.com/image-photo/flowers-wall-background-amazing-red-260nw-600789497.jpg);
-    height: 250px;
+    background: lightpink url(https://webstockreview.net/images/floral-clipart-pastel-19.png)  no-repeat;
+    height: 300px;
     width: 1000px;
 }
 h1{
     font-size: 100px;
     text-align: center;
-    color: rgb(168, 67, 160);
+    color: white ;
 }
+
 input {
     display: block;
     font-size: 12px;
@@ -21,4 +22,9 @@ fieldset{
     color: rgb(13, 88, 59);
     font-size: 20px;
 }
-
+fieldset{
+    width: 975px;
+    background: lightpink;
+    color: rgb(13, 88, 59);
+    font-size: 20px;
+}
