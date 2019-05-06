@@ -1,17 +1,29 @@
 const customerApi = {
-    storage: localStorage
+    storage: localStorage,
     save(customer) {
         const customers = customerApi.getAll();
         customers.push(customer);
         const json = JSON.stringify(customers);
+        customerApi.storage.setItem('customers', json);
     },
-    get() {
-        const json = applicantApi.storage.getItem('customer');
+    get(name){
+        const customers = customerApi.getAll();
+
+        for(let i = 0; i < customers.length; i++) {
+            const customer = customers[i];
+            if(customer.name === name) {
+                return customer;
+            }
+        }
+
+    },
+    getAll() {
+        const json = customerApi.storage.getItem('customers');
         let customers = JSON.parse(json);
         if(!customers) {
             customers = [];
         }
-        return customer;
+        return customers;
     }
 };
 

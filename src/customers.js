@@ -2,14 +2,22 @@ import customerApi from './customer-api.js';
 
 const tbody = document.getElementById('orders');
 
-const orders = orderApi.getAll();
-for(let i = 0; i < orders.length; i++) {
-    const customer = customer [i];
+const customers = customerApi.getAll();
+console.log(customers);
+for(let i = 0; i < customers.length; i++) {
+    const customer = customers[i];
 
     const tr = document.createElement('tr');
 
     const nameCell = document.createElement('td');
-    nameCell.textContent = customer.name;
+    const link = document.createElement('a');
+    const searchParams = new URLSearchParams();
+
+    searchParams.set('name', customer.name);
+    link.href = 'customer.html?' + searchParams.toString();
+
+    link.textContent = customer.name;
+    nameCell.appendChild(link);
     tr.appendChild(nameCell);
 
     const phoneCell = document.createElement('td');
@@ -21,4 +29,4 @@ for(let i = 0; i < orders.length; i++) {
     tr.appendChild(timeCell);
 
     tbody.appendChild(tr);
-;}
+}

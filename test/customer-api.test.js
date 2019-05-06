@@ -5,7 +5,7 @@ QUnit.module('customer api');
 
 customerApi.storage = sessionStorage;
 const testStorage = sessionStorage;
-//const orderApi = {   
+//const orderApi = {
     //  save: function(customer) {
    //const json = JSON.stringify(customer);
   //localStorage.setItem('applicant', json);
@@ -18,30 +18,28 @@ const testStorage = sessionStorage;
 //};
 
 test('round-trip customer', (assert) => {
-    testStorage.removeItem('applicants');
-   //remember you changed applicant to customer//
+    testStorage.removeItem('customers');
     const customer = { name: 'tester' };
-    console.log(customer, 'customer');
     customerApi.save(customer);
-    const result = customerApi.get();
+    const result = customerApi.get(customer.name);
 
     assert.deepEqual(result, customer);
 });
 
-test('no applicants in local storage returns empty array', assert => {
-    testStorage.removeItem('applicants');
+test('no customerss in local storage returns empty array', assert => {
+    testStorage.removeItem('customers');
     const expected = [];
 
     const customers = customerApi.getAll();
-     
+
     assert.deepEqual(customers, expected);
 });
 
 test('two saves return array with two items', (assert => {
     testStorage.removeItem('customers');
 
-    const customer1 = { name: 'tester '};
-    const customer2 = { name: 'tester2'};
+    const customer1 = { name: 'tester ' };
+    const customer2 = { name: 'tester2' };
     const expected = [customer1, customer2];
 
     customerApi.save(customer1);
@@ -50,4 +48,4 @@ test('two saves return array with two items', (assert => {
     const customers = customerApi.getAll();
 
     assert.deepEqual(customers, expected);
-}); 
+}));
