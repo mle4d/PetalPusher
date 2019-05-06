@@ -1,9 +1,24 @@
+header{
+    background: lightpink url(https://image.shutterstock.com/image-photo/flowers-wall-background-amazing-red-260nw-600789497.jpg);
+    height: 250px;
+    width: 1000px;
+}
+h1{
+    font-size: 100px;
+    text-align: center;
+    color: rgb(168, 67, 160);
+}
 input {
     display: block;
     font-size: 12px;
 }
 .inline-input {
     display: inline;
-
+}
+fieldset{
+    width: 975px;
+    background: lightpink;
+    color: rgb(13, 88, 59);
+    font-size: 20px;
 }
 
