@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/order.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Make Your Bouquet
+        </h1>
+    </header>
+
+    <main>
+        <form id="order-form">
+
+        <fieldset>
+            <legend> Contact &amp; Delivery Info</legend>
+            <label class="stacked-label" for="name">Name:</label>
+            <input class="text-input" type="text" name="name" id="name" placeholdder="First and last name" required>
+            <label for="phone">Phone Number:</label>
+            <input class="text-input" type="text" name="phone" id="phone" required>
+                        This order will be:<br>
+
+            <input class="inline-input" type="radio" id="delivery" value="delivery" name="dpu">
+            <label for="delivery">Delivery</label>
+
+            <input class="inline-input" type="radio" id="pick-up" value="pick-up" name="dpu">
+            <label for="pick-up">Pick-up</label><br>
+
+            <label class="time" for="time">Date &amp; Time for delivery or pick up:</label>
+            <input class="text-input" type="text" name="time" id="time" required>
+            <label class="address" for="address">Address for delivery:</label>
+            <input class="text-input" type="text" name="address" id="address">
+        </fieldset>
+                <p>
+        <fieldset>
+            <legend>Bouquet Builder</legend>
+            <h3>Choose a main flower</h3>
+            <div>
+                <input class="inline-input" name="flowers" value="rose" type="checkbox" id="rose">
+                <label for="rose">Rose</label>
+            </div>
+            <div>
+                <input class="inline-input" name="flowers" value="tulip" type="checkbox" id="tulip">
+                <label for="tulip">Tulip</label>
+           </div>
+            <div>
+                <input class="inline-input" name="flowers" value="hydrangea" type="checkbox" id="hydrangea">
+                <label for="hydrangea">Hydrangea</label>
+            </div>
+            <div>
+                <input class="inline-input" name="flowers" value="snapdragon" type="checkbox" id="snapdragon">
+                <label for="snapdragon">Snapdragon</label>
+            </div>
+            <div>
+                <input class="inline-input" name="flowers" value="gerbera" type="checkbox" id="gerbera">
+                <label for="gerbera">Gerbera Daisy</label>
+            </div>
+                <label class="line-label" for="budget">Select a bouquet budget amount</label><br>
+                    <select id="budget" name="budget" required>
+                        <option value="" hidden disabled selected>Select an amount</option>
+                        <option value="10">$10</option>
+                        <option value="20">$20</option>
+                        <option value="30">$30</option>
+                        <option value="40">$40</option>
+                        <option value="50">$50</option>
+                    </select><br>
+                    <label class="line-label" for="color">Select a bouquet color</label><br>
+                    <select id="color" name="color" required>
+                        <option value="" hidden disabled selected>Select a color</option>
+                        <option value="red">Red</option>
+                        <option value="pink">Pink</option>
+                        <option value="purple">Purple</option>
+                        <option value="white">White</option>
+                        <option value="Yellow">Yellow</option>
+                    </select>
+            </fieldset>
+            <section>
+                <h3>Click to confirm order</h3>
+                <a href="thank-you.html"><button>Order</button></a>
+            </section>
+            <p id="message"></p>
+        </form>
+    </main>
+    <script type="module" src="src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+dt, dd {
+  display: inline-block;
+  padding: 8px 10px;
+}
+dt {
+  background: lightcoral;
+  color: white;
+  text-align: right;
+  padding-left: 30px
+  font-size: .95em;
+}
+dt:after{
+  content: ":";
+}
+dd {
+  margin-left: 8px;;
+}
